@@ -1,10 +1,15 @@
+body {
+  margin: 0 1em;
+  margin-top: 20vh;
+}
 .bars {
-  width: 6px;
-
-  background-color: rgb(100, 143, 180);
-  margin-right: 0.3em;
+  width: 3px;
+  background-color: rgb(61, 77, 122);
+  margin: 0 1px;
 }
 
-.container-array {
+.array-container {
+  border: 1px solid red;
   display: flex;
+  margin-bottom: 2em;
 }
