@@ -1,0 +1,10 @@
+.bars {
+  width: 6px;
+
+  background-color: rgb(100, 143, 180);
+  margin-right: 0.3em;
+}
+
+.container-array {
+  display: flex;
+}
