@@ -23,8 +23,7 @@ class RandomArray extends Component {
     this.setState({ array });
   };
 
-  OnSubmit = e =>
-    this.setState({ array: this.state.array.sort((a, b) => a - b) });
+  OnSubmit = e => this.setState({ array: bubbleSort(this.state.array) });
 
   render() {
     const array = this.state.array;
@@ -41,7 +40,7 @@ class RandomArray extends Component {
           ))}
         </div>
         <button onClick={this.ArrayRandom}>Generate Random Array</button>
-        <button onClick={this.OnSubmit}>Sort Array</button>
+        <button onClick={this.OnSubmit}>Bubble Sort</button>
       </>
     );
   }
@@ -50,5 +49,22 @@ class RandomArray extends Component {
 function RandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+/*---------------------------------*/
+//Attempt to inplement bubble sort alone
+
+let bubbleSort = array => {
+  let len = array.length;
+  for (let i = 0; i < len; i++) {
+    for (let j = 0; j < len; j++) {
+      if (array[j] > array[j + 1]) {
+        let tmp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = tmp;
+      }
+    }
+  }
+  return array;
+};
 
 export default App;
