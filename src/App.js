@@ -33,6 +33,8 @@ function RandomArray() {
   const sort = () => {
     setTimeout(function() {
       console.log(bubbleSortBasic(state));
+      let stage = bubbleSortBasic(state);
+      setState([...state, bubbleSortBasic(state)]);
     }, 2000);
     console.log(state);
   };
