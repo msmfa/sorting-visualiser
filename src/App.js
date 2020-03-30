@@ -10,13 +10,20 @@ function App() {
 }
 
 function RandomArray() {
-  const [state, setState] = useState([]);
+  const initialArray = Array.from(
+    { length: 60 },
+    () => Math.floor(Math.random() * 30) + 1
+  );
+
+  const [state, setState] = useState(initialArray);
 
   const generateRandomArray = e => {
     setState(
       Array.from({ length: 60 }, () => Math.floor(Math.random() * 30) + 1)
     );
   };
+
+  console.log(state);
 
   const bubbleSort = array => {
     let len = array.length;
