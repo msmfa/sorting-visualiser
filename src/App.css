@@ -1,15 +1,27 @@
-body {
-  margin: 0 1em;
-  margin-top: 20vh;
-}
-.bars {
-  width: 3px;
-  background-color: rgb(61, 77, 122);
-  margin: 0 1px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.array-container {
-  border: 1px solid red;
+.bars {
+  width: 6px;
+  background-color: red;
+  margin: 2px;
+}
+
+.container-bars {
   display: flex;
-  margin-bottom: 2em;
+}
+
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  border: 1px solid grey;
+  margin: 1em;
 }

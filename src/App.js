@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -9,62 +9,49 @@ function App() {
   );
 }
 
-class RandomArray extends Component {
-  state = { array: [] };
+function RandomArray() {
+  let array = [1, 9, 3, 9, 6, 4, 8, 7];
 
-  componentDidMount() {
-    this.ArrayRandom();
-  }
-  ArrayRandom = () => {
-    let array = [];
-    for (let i = 0; i < 100; i++) {
-      array.push(RandomInt(1, 200));
-    }
-    this.setState({ array });
+  const [state, setState] = useState(array);
+  const generateRandomArray = e => {
+    setState(Array.from({ length: 9 }, () => Math.floor(Math.random() * 9)));
   };
 
-  OnSubmit = e => this.setState({ array: bubbleSort(this.state.array) });
-
-  render() {
-    const array = this.state.array;
-
-    return (
-      <>
-        <div className="array-container">
-          {array.map((number, index) => (
-            <div
-              className="bars"
-              key={index}
-              style={{ height: `${number}px` }}
-            ></div>
-          ))}
-        </div>
-        <button onClick={this.ArrayRandom}>Generate Random Array</button>
-        <button onClick={this.OnSubmit}>Bubble Sort</button>
-      </>
-    );
-  }
-}
-
-function RandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-/*---------------------------------*/
-//Attempt to inplement bubble sort alone
-
-let bubbleSort = array => {
-  let len = array.length;
-  for (let i = 0; i < len; i++) {
-    for (let j = 0; j < len; j++) {
-      if (array[j] > array[j + 1]) {
-        let tmp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = tmp;
+  function bubbleSortBasic(array) {
+    for (let i = 0; i < array.length; i++) {
+      for (let j = 1; j < array.length; j++) {
+        if (array[j - 1] > array[j]) {
+          let temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
       }
     }
+    return array;
   }
-  return array;
-};
 
+  const sort = () => {
+    setTimeout(function() {
+      console.log(bubbleSortBasic(state));
+    }, 2000);
+    console.log(state);
+  };
+
+  return (
+    <>
+      <div className="container-bars">
+        {state.map(item => (
+          <li
+            style={{
+              height: `${item * 50}px`
+            }}
+            className="bars"
+          ></li>
+        ))}
+      </div>
+      <button onClick={generateRandomArray}>Random Array</button>
+      <button onClick={sort}>Sort</button>
+    </>
+  );
+}
 export default App;
