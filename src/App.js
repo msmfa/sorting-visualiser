@@ -23,8 +23,6 @@ function RandomArray() {
     );
   };
 
-  console.log(state);
-
   const bubbleSort = array => {
     let len = array.length;
     for (let j = 0; j < len; j++) {
@@ -42,10 +40,12 @@ function RandomArray() {
   const sort = () => {
     if (state.join("") === completedArray.join("")) return;
     setState([...bubbleSort(state)]);
-    setInterval(sort, 500);
+    setTimeout(sort, 200);
+    console.log("algo has run this many times");
   };
 
   //Used a recursive function here but could have used SetTimeout with clearInterval
+  //
 
   return (
     <>
