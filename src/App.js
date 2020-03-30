@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
@@ -10,9 +10,7 @@ function App() {
 }
 
 function RandomArray() {
-  let array = [1, 9, 3, 9, 6, 4, 8, 7];
-
-  const [state, setState] = useState(array);
+  const [state, setState] = useState([]);
 
   const generateRandomArray = e => {
     setState(
@@ -20,7 +18,7 @@ function RandomArray() {
     );
   };
 
-  function bubbleSortBasic(array) {
+  const bubbleSort = array => {
     let len = array.length;
     for (let j = 0; j < len; j++) {
       if (array[j] > array[j + 1]) {
@@ -30,26 +28,17 @@ function RandomArray() {
       }
     }
     return array;
-  }
+  };
 
   let completedArray = [...state].sort((a, b) => a - b);
-  console.log(completedArray);
-  console.log("state");
-  console.log(state);
-  console.log("state");
 
   const sort = () => {
     if (state.join("") === completedArray.join("")) return;
-
-    setState([...bubbleSortBasic(state)]);
-    console.log(state.join(""));
-    setInterval(sort, 800);
+    setState([...bubbleSort(state)]);
+    setInterval(sort, 500);
   };
 
-  //If state === state could be a base for a recursive function?
-  //doesnt work because state obvously is always === to state
-  //What about passing in a completed array and comparing it?
-  //Turned the arrays in strings to compare them and that seems to work
+  //Used a recursive function here but could have used SetTimeout with clearInterval
 
   return (
     <>
@@ -60,9 +49,7 @@ function RandomArray() {
               height: `${item * 10}px`
             }}
             className="bars"
-          >
-            {item}
-          </li>
+          ></li>
         ))}
       </div>
       <button onClick={generateRandomArray}>Random Array</button>
