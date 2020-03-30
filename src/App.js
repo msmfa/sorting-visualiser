@@ -16,13 +16,12 @@ function RandomArray() {
 
   const generateRandomArray = e => {
     setState(
-      Array.from({ length: 10 }, () => Math.floor(Math.random() * 9) + 1)
+      Array.from({ length: 60 }, () => Math.floor(Math.random() * 30) + 1)
     );
   };
 
   function bubbleSortBasic(array) {
     let len = array.length;
-
     for (let j = 0; j < len; j++) {
       if (array[j] > array[j + 1]) {
         let tmp = array[j];
@@ -33,14 +32,24 @@ function RandomArray() {
     return array;
   }
 
-  const sort = () => {
-    setTimeout(function() {
-      setState([...bubbleSortBasic(state)]);
-      console.log(state);
-    }, 500);
+  let completedArray = [...state].sort((a, b) => a - b);
+  console.log(completedArray);
+  console.log("state");
+  console.log(state);
+  console.log("state");
 
-    //If state === state could be a base for a recursive function?
+  const sort = () => {
+    if (state.join("") === completedArray.join("")) return;
+
+    setState([...bubbleSortBasic(state)]);
+    console.log(state.join(""));
+    setInterval(sort, 800);
   };
+
+  //If state === state could be a base for a recursive function?
+  //doesnt work because state obvously is always === to state
+  //What about passing in a completed array and comparing it?
+  //Turned the arrays in strings to compare them and that seems to work
 
   return (
     <>
@@ -48,7 +57,7 @@ function RandomArray() {
         {state.map(item => (
           <li
             style={{
-              height: `${item * 50}px`
+              height: `${item * 10}px`
             }}
             className="bars"
           >
