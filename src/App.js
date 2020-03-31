@@ -15,16 +15,19 @@ function RandomArray() {
     () => Math.floor(Math.random() * 30) + 1
   );
 
-  const [state, setState] = useState(initialArray);
-
   const generateRandomArray = e => {
     setState(
       Array.from({ length: 60 }, () => Math.floor(Math.random() * 30) + 1)
     );
   };
 
+  const [state, setState] = useState(initialArray);
+
+  const completedArray = [...state].sort((a, b) => a - b);
+
   const bubbleSort = array => {
     let len = array.length;
+
     for (let j = 0; j < len; j++) {
       if (array[j] > array[j + 1]) {
         let tmp = array[j];
@@ -35,14 +38,34 @@ function RandomArray() {
     return array;
   };
 
-  let completedArray = [...state].sort((a, b) => a - b);
-
-  const sort = () => {
+  const bubbleSortClick = () => {
     if (state.join("") === completedArray.join("")) return;
     setState([...bubbleSort(state)]);
-    setTimeout(sort, 200);
+    setTimeout(bubbleSortClick, 200);
     console.log("algo has run this many times");
   };
+
+  //////////////////
+  console.log(state);
+  const mergeSortClick = () => {
+    setState([...mergeRight([...state])]);
+    console.log(mergeRight(state));
+  };
+  //splits the array in half and swaps once
+  function mergeRight(arr) {
+    console.log(arr);
+    let secondHalf = arr.slice(Math.floor(arr.length / 2));
+
+    for (let i = 0; i < secondHalf.length; i++) {
+      if (secondHalf[i] > secondHalf[i + 1]) {
+        let element = secondHalf[i];
+        secondHalf[i] = secondHalf[i + 1];
+        secondHalf[i + 1] = element;
+        console.log(element);
+      }
+    }
+    return secondHalf;
+  }
 
   //Used a recursive function here but could have used SetTimeout with clearInterval
   //
@@ -60,7 +83,8 @@ function RandomArray() {
         ))}
       </div>
       <button onClick={generateRandomArray}>Random Array</button>
-      <button onClick={sort}>Sort</button>
+      <button onClick={bubbleSortClick}>Bubble Sort</button>
+      <button onClick={mergeSortClick}>Merge Sort</button>
     </>
   );
 }
