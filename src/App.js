@@ -23,7 +23,7 @@ function RandomArray() {
 
   const [state, setState] = useState(initialArray);
 
-  const completedArray = [...state].sort((a, b) => a - b);
+  let completedArray = [...state].sort((a, b) => a - b);
 
   const bubbleSort = array => {
     let len = array.length;
@@ -37,7 +37,6 @@ function RandomArray() {
     }
     return array;
   };
-
   const bubbleSortClick = () => {
     if (state.join("") === completedArray.join("")) return;
     setState([...bubbleSort(state)]);
@@ -47,16 +46,24 @@ function RandomArray() {
 
   //////////////////
   const mergeSortClick = () => {
-    setState([...mergeRight([...state])]);
-    console.log(state);
-    console.log(mergeRight(state));
+    let halfLength = [...state].slice().length / 2;
+    console.log(halfLength);
+    let splitFirst = [...state].slice(0, halfLength);
+    console.log(splitFirst);
+    if (splitFirst.join("") === splitFirst.sort((a, b) => a - b).join(""))
+      return;
+    setState([...mergeRight(state)]);
+    //setTimeout(mergeSortClick, 200);
   };
-  //splits the array in half and swaps once
+
+  //split the array passed in in half.
+  //if split a and split b are sorted return the function
+
   function mergeRight(arr) {
     let secondHalf = arr.slice(Math.floor(arr.length / 2));
     let half = Math.floor(arr.length / 2);
     let firstHalf = arr.slice(0, half);
-    console.log(firstHalf);
+
     for (let i = 0; i < secondHalf.length; i++) {
       if (secondHalf[i] > secondHalf[i + 1]) {
         let element = secondHalf[i];
