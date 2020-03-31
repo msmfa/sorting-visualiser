@@ -46,25 +46,25 @@ function RandomArray() {
   };
 
   //////////////////
-  console.log(state);
   const mergeSortClick = () => {
     setState([...mergeRight([...state])]);
+    console.log(state);
     console.log(mergeRight(state));
   };
   //splits the array in half and swaps once
   function mergeRight(arr) {
-    console.log(arr);
     let secondHalf = arr.slice(Math.floor(arr.length / 2));
-
+    let half = Math.floor(arr.length / 2);
+    let firstHalf = arr.slice(0, half);
+    console.log(firstHalf);
     for (let i = 0; i < secondHalf.length; i++) {
       if (secondHalf[i] > secondHalf[i + 1]) {
         let element = secondHalf[i];
         secondHalf[i] = secondHalf[i + 1];
         secondHalf[i + 1] = element;
-        console.log(element);
       }
     }
-    return secondHalf;
+    return [...secondHalf, ...firstHalf];
   }
 
   //Used a recursive function here but could have used SetTimeout with clearInterval
