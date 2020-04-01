@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { InsertionSortAlgo } from "./components/InsertionSort";
+import { MergeSortAlgo } from "./components/MergeSort";
 import "./App.css";
 
 const arrayLength = 70;
@@ -12,12 +13,12 @@ const sortingCompleteColour = "black";
 function App() {
   return (
     <>
-      <SortingArray />
+      <DisplayArray />
     </>
   );
 }
 
-function SortingArray() {
+function DisplayArray() {
   const [arr, setArr] = useState([]);
   const [sorting, setSorting] = useState(false);
   const [isSorted, setIsSorted] = useState(false);
@@ -107,6 +108,11 @@ function SortingArray() {
     const displayBars = InsertionSortAlgo(arr);
     animateArrayUpdate(displayBars);
   }
+  function mergeSort() {
+    const displayBars = MergeSortAlgo(arr);
+    animateArrayUpdate(displayBars);
+  }
+
   return (
     <div className="visualiser-container">
       <div className="array-container" ref={containerRef}>
@@ -131,6 +137,11 @@ function SortingArray() {
           <li>
             <button className="app-button" onClick={insertionSort}>
               Insertion sort
+            </button>
+          </li>
+          <li>
+            <button className="app-button" onClick={mergeSort}>
+              Merge sort
             </button>
           </li>
         </ul>
