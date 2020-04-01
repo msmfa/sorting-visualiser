@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { InsertionSortAlgo } from "./components/InsertionSort";
 import { MergeSortAlgo } from "./components/MergeSort";
 import { QuickSortAlgo } from "./components/QuickSort";
@@ -128,7 +129,7 @@ function DisplayArray() {
               height: `${bar}vmin`,
               width: `${100 / arrayLength}vw`
             }}
-            key={index} //replace with UUID
+            key={uuidv4()} //replace with UUID
           ></div>
         ))}
       </div>
