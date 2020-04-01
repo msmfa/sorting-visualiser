@@ -5,7 +5,7 @@ import { MergeSortAlgo } from "./components/MergeSort";
 import { QuickSortAlgo } from "./components/QuickSort";
 import "./App.css";
 
-const arrayLength = 70;
+const arrayLength = 120;
 const minNumb = 5;
 const maxNum = 80;
 const timeDelay = 1;
@@ -133,10 +133,14 @@ function DisplayArray() {
           ></div>
         ))}
       </div>
-      <footer className="app-footer">
+      <footer className="app-container">
         <ul>
           <li>
-            <button className="app-button" onClick={displayArray}>
+            <button
+              className="app-button"
+              id="new-array-button"
+              onClick={displayArray}
+            >
               Create new array
             </button>
           </li>

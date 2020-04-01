@@ -1,8 +1,14 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .visualiser-container {
   display: flex;
   flex-direction: column;
   min-height: 90vh;
-  margin: 1em 1em 1em 30vw;
+  margin: 1em 1em 1em 40vw;
 }
 
 .array-container {
@@ -14,9 +20,16 @@
   margin: 0.15%;
 }
 
-.app-footer ul {
+.app-container ul {
   display: flex;
+  justify-content: space-between;
   list-style-type: none;
-  padding: 0;
-  white-space: nowrap;
+  margin: 2em 0;
+}
+
+.app-button {
+  border: 1px solid rgb(151, 151, 151);
+  width: 10em;
+  height: 4em;
+  border-radius: 3px;
 }
