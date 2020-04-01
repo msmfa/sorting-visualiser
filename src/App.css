@@ -5,10 +5,8 @@
 }
 
 .visualiser-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 90vh;
-  margin: 1em 1em 1em 40vw;
+  width: 70vw;
+  margin: 2em 12em;
 }
 
 .array-container {
@@ -16,14 +14,14 @@
 }
 
 .array-bar {
-  background-color: rgb(236, 42, 42);
-  margin: 0.15%;
+  background-color: rgb(123, 157, 221);
+  margin: 0.2%;
 }
 
 .app-container ul {
   display: flex;
-  list-style-type: none;
   position: fixed;
+  list-style-type: none;
   margin: 2em 0;
 }
 
@@ -32,5 +30,5 @@
   width: 10em;
   height: 4em;
   border-radius: 3px;
-  margin: 0 2em;
+  margin: 0 2em 0 0;
 }

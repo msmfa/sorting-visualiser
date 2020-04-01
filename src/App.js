@@ -5,12 +5,12 @@ import { MergeSortAlgo } from "./components/MergeSort";
 import { QuickSortAlgo } from "./components/QuickSort";
 import "./App.css";
 
-const arrayLength = 120;
+const arrayLength = 100;
 const minNumb = 5;
 const maxNum = 80;
-const timeDelay = 8;
-const sortingColour = "blue";
-const sortingCompleteColour = "black";
+const timeDelay = 5;
+const sortingColour = "red";
+const sortingCompleteColour = "blue";
 
 function App() {
   return (
@@ -80,7 +80,7 @@ function DisplayArray() {
     }, timeDelay);
     setTimeout(() => {
       arrayBarStyle.backgroundColor = "";
-    }, timeDelay * 1);
+    }, timeDelay * 2);
   }
 
   function animateSortedArray() {
@@ -122,7 +122,7 @@ function DisplayArray() {
   return (
     <div className="visualiser-container">
       <div className="array-container" ref={containerRef}>
-        {arr.map((bar, index) => (
+        {arr.map(bar => (
           <div
             className="array-bar"
             style={{
