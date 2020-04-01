@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { InsertionSortAlgo } from "./components/InsertionSort.js";
 import "./App.css";
 
 const arrayLength = 70;
@@ -123,7 +124,7 @@ function SortingArray() {
   }
 
   function insertionSort() {
-    const displayBars = insertionSortdisplayBars(arr);
+    const displayBars = InsertionSortAlgo(arr);
     animateArrayUpdate(displayBars);
   }
   return (
