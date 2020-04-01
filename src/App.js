@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { InsertionSortAlgo } from "./components/InsertionSort";
 import { MergeSortAlgo } from "./components/MergeSort";
+import { QuickSortAlgo } from "./components/QuickSort";
 import "./App.css";
 
 const arrayLength = 70;
@@ -112,6 +113,10 @@ function DisplayArray() {
     const displayBars = MergeSortAlgo(arr);
     animateArrayUpdate(displayBars);
   }
+  function quickSort() {
+    const displayBars = QuickSortAlgo(arr);
+    animateArrayUpdate(displayBars);
+  }
 
   return (
     <div className="visualiser-container">
@@ -142,6 +147,11 @@ function DisplayArray() {
           <li>
             <button className="app-button" onClick={mergeSort}>
               Merge sort
+            </button>
+          </li>
+          <li>
+            <button className="app-button" onClick={quickSort}>
+              Quick sort
             </button>
           </li>
         </ul>
