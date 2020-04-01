@@ -1,27 +1,21 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.visualiser-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.bars {
-  width: 6px;
-  background-color: red;
-  margin: 2px;
-}
-
-.container-bars {
+.array-container {
   display: flex;
 }
 
-li {
-  text-decoration: none;
-  list-style-type: none;
+.array-bar {
+  background-color: rgb(236, 42, 42);
+  margin: 0.15%;
 }
 
-button {
-  width: 100px;
-  height: 40px;
-  border: 1px solid grey;
-  margin: 1em;
+.app-footer ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  white-space: nowrap;
 }

@@ -1,98 +1,170 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
+
+const arrayLength = 70;
+const minNumb = 5;
+const maxNum = 80;
+const timeDelay = 1;
+const sortingColour = "blue";
+const sortingCompleteColour = "black";
 
 function App() {
   return (
     <>
-      <RandomArray />
+      <SortingArray />
     </>
   );
 }
 
-function RandomArray() {
-  const initialArray = Array.from(
-    { length: 60 },
-    () => Math.floor(Math.random() * 30) + 1
-  );
+function SortingArray() {
+  const [arr, setArr] = useState([]);
+  const [sorting, setSorting] = useState(false);
+  const [isSorted, setIsSorted] = useState(false);
+  const containerRef = useRef(null);
 
-  const generateRandomArray = e => {
-    setState(
-      Array.from({ length: 60 }, () => Math.floor(Math.random() * 30) + 1)
-    );
-  };
+  useEffect(displayArray, []);
 
-  const [state, setState] = useState(initialArray);
+  function displayArray() {
+    if (sorting) return;
 
-  let completedArray = [...state].sort((a, b) => a - b);
+    if (isSorted) resetArrayColour();
 
-  const bubbleSort = array => {
-    let len = array.length;
+    setIsSorted(false);
 
-    for (let j = 0; j < len; j++) {
-      if (array[j] > array[j + 1]) {
-        let tmp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = tmp;
-      }
+    const arr = [];
+    for (let i = 0; i < arrayLength; i++) {
+      arr.push((maxNum - minNumb) * (i / arrayLength) + minNumb);
     }
-    return array;
-  };
-  const bubbleSortClick = () => {
-    if (state.join("") === completedArray.join("")) return;
-    setState([...bubbleSort(state)]);
-    setTimeout(bubbleSortClick, 200);
-    console.log("algo has run this many times");
-  };
-
-  //////////////////
-  const mergeSortClick = () => {
-    let halfLength = [...state].slice().length / 2;
-    console.log(halfLength);
-    let splitFirst = [...state].slice(0, halfLength);
-    console.log(splitFirst);
-    if (splitFirst.join("") === splitFirst.sort((a, b) => a - b).join(""))
-      return;
-    setState([...mergeRight(state)]);
-    //setTimeout(mergeSortClick, 200);
-  };
-
-  //split the array passed in in half.
-  //if split a and split b are sorted return the function
-
-  function mergeRight(arr) {
-    let secondHalf = arr.slice(Math.floor(arr.length / 2));
-    let half = Math.floor(arr.length / 2);
-    let firstHalf = arr.slice(0, half);
-
-    for (let i = 0; i < secondHalf.length; i++) {
-      if (secondHalf[i] > secondHalf[i + 1]) {
-        let element = secondHalf[i];
-        secondHalf[i] = secondHalf[i + 1];
-        secondHalf[i + 1] = element;
-      }
-    }
-    return [...secondHalf, ...firstHalf];
+    shuffle(arr);
+    setArr(arr);
   }
 
-  //Used a recursive function here but could have used SetTimeout with clearInterval
-  //
+  function animateArrayUpdate(displayBars) {
+    if (sorting) return;
+    setSorting(true);
+    displayBars.forEach(([comparison, swapped], index) => {
+      setTimeout(() => {
+        if (!swapped) {
+          if (comparison.length === 2) {
+            const [i, j] = comparison;
+            animateArrayAccess(i);
+            animateArrayAccess(j);
+          } else {
+            const [i] = comparison;
+            animateArrayAccess(i);
+          }
+        } else {
+          setArr(prevArr => {
+            const [k, newValue] = comparison;
+            const newArr = [...prevArr];
+            newArr[k] = newValue;
+            return newArr;
+          });
+        }
+      }, index * timeDelay);
+    });
+    setTimeout(() => {
+      animateSortedArray();
+    }, displayBars.length * timeDelay);
+  }
 
+  function animateArrayAccess(index) {
+    const arrayBars = containerRef.current.children;
+    const arrayBarStyle = arrayBars[index].style;
+    setTimeout(() => {
+      arrayBarStyle.backgroundColor = sortingColour;
+    }, timeDelay);
+    setTimeout(() => {
+      arrayBarStyle.backgroundColor = "";
+    }, timeDelay * 2);
+  }
+
+  function animateSortedArray() {
+    const arrayBars = containerRef.current.children;
+    for (let i = 0; i < arrayBars.length; i++) {
+      const arrayBarStyle = arrayBars[i].style;
+      setTimeout(
+        () => (arrayBarStyle.backgroundColor = sortingCompleteColour),
+        i * timeDelay
+      );
+    }
+    setTimeout(() => {
+      setIsSorted(true);
+      setSorting(false);
+    }, arrayBars.length * timeDelay);
+  }
+
+  function resetArrayColour() {
+    const arrayBars = containerRef.current.children;
+    for (let i = 0; i < arr.length; i++) {
+      const arrayBarStyle = arrayBars[i].style;
+      arrayBarStyle.backgroundColor = "";
+    }
+  }
+  function insertionSortdisplayBars(arr) {
+    const copy = [...arr];
+    const displayBars = [];
+    for (let i = 1; i < copy.length; i++) {
+      for (let j = i - 1; j >= 0; j--) {
+        displayBars.push([[j, j + 1], false]);
+        if (copy[j + 1] < copy[j]) {
+          displayBars.push([[j, copy[j + 1]], true]);
+          displayBars.push([[j + 1, copy[j]], true]);
+          swap(copy, j, j + 1);
+        } else break;
+      }
+    }
+    return displayBars;
+  }
+  function swap(arr, index1, index2) {
+    const temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+  }
+
+  function insertionSort() {
+    const displayBars = insertionSortdisplayBars(arr);
+    animateArrayUpdate(displayBars);
+  }
   return (
-    <>
-      <div className="container-bars">
-        {state.map(item => (
-          <li
+    <div className="visualiser-container">
+      <div className="array-container" ref={containerRef}>
+        {arr.map((bar, index) => (
+          <div
+            className="array-bar"
             style={{
-              height: `${item * 10}px`
+              height: `${bar}vmin`,
+              width: `${100 / arrayLength}vw`
             }}
-            className="bars"
-          ></li>
+            key={index} //replace with UUID
+          ></div>
         ))}
       </div>
-      <button onClick={generateRandomArray}>Random Array</button>
-      <button onClick={bubbleSortClick}>Bubble Sort</button>
-      <button onClick={mergeSortClick}>Merge Sort</button>
-    </>
+      <footer className="app-footer">
+        <ul>
+          <li>
+            <button className="app-button" onClick={displayArray}>
+              Create new array
+            </button>
+          </li>
+          <li>
+            <button className="app-button" onClick={insertionSort}>
+              Insertion sort
+            </button>
+          </li>
+        </ul>
+      </footer>
+    </div>
   );
 }
+
+const shuffle = arr => {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = arr[i];
+    arr[i] = arr[randomIndex];
+    arr[randomIndex] = temp;
+  }
+};
+
 export default App;
