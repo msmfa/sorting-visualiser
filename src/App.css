@@ -22,8 +22,8 @@
 
 .app-container ul {
   display: flex;
-  justify-content: space-between;
   list-style-type: none;
+  position: fixed;
   margin: 2em 0;
 }
 
@@ -32,4 +32,5 @@
   width: 10em;
   height: 4em;
   border-radius: 3px;
+  margin: 0 2em;
 }

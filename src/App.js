@@ -8,7 +8,7 @@ import "./App.css";
 const arrayLength = 120;
 const minNumb = 5;
 const maxNum = 80;
-const timeDelay = 1;
+const timeDelay = 8;
 const sortingColour = "blue";
 const sortingCompleteColour = "black";
 
@@ -80,7 +80,7 @@ function DisplayArray() {
     }, timeDelay);
     setTimeout(() => {
       arrayBarStyle.backgroundColor = "";
-    }, timeDelay * 2);
+    }, timeDelay * 1);
   }
 
   function animateSortedArray() {
