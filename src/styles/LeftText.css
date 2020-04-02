@@ -1,0 +1,11 @@
+.container {
+  border: 1px solid red;
+  display: flex;
+}
+.text-container {
+  border: 1px solid red;
+}
+
+.text-quick-link {
+  color: rgb(14, 99, 168);
+}

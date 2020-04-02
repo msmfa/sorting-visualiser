@@ -3,7 +3,9 @@ import { v4 as uuidv4 } from "uuid";
 import { InsertionSortAlgo } from "./components/InsertionSort";
 import { MergeSortAlgo } from "./components/MergeSort";
 import { QuickSortAlgo } from "./components/QuickSort";
+import DisplayTextLeft from "./components/LeftText";
 import "./App.css";
+import "./styles/LeftText.css";
 
 const arrayLength = 100;
 const minNumb = 5;
@@ -15,7 +17,10 @@ const sortingCompleteColour = "blue";
 function App() {
   return (
     <>
-      <DisplayArray />
+      <div className="container">
+        <DisplayArray />
+        <DisplayTextLeft />
+      </div>
     </>
   );
 }
