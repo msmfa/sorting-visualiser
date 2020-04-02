@@ -10,7 +10,7 @@ sort, merge sort and insertion sort.
 
 ## App in Action
 
-![](IMG/sorting-visualiser.png)
+![](src/IMG/sorting-visualiser.png)
 
 ## Build Tools & Languages
 
