@@ -139,32 +139,25 @@ function DisplayArray() {
         ))}
       </div>
       <footer className="app-container">
-        <ul>
-          <li>
-            <button
-              className="app-button"
-              id="new-array-button"
-              onClick={displayArray}
-            >
-              Create new array
-            </button>
-          </li>
-          <li>
-            <button className="app-button" onClick={insertionSort}>
-              Insertion sort
-            </button>
-          </li>
-          <li>
-            <button className="app-button" onClick={mergeSort}>
-              Merge sort
-            </button>
-          </li>
-          <li>
-            <button className="app-button" onClick={quickSort}>
-              Quick sort
-            </button>
-          </li>
-        </ul>
+        <button
+          className="app-button"
+          id="new-array-button"
+          onClick={displayArray}
+        >
+          Create new array
+        </button>
+
+        <button className="app-button" onClick={insertionSort}>
+          Insertion sort
+        </button>
+
+        <button className="app-button" onClick={mergeSort}>
+          Merge sort
+        </button>
+
+        <button className="app-button" onClick={quickSort}>
+          Quick sort
+        </button>
       </footer>
     </div>
   );

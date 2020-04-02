@@ -3,7 +3,9 @@
   margin: 0;
   padding: 0;
 }
-
+.container {
+  display: flex;
+}
 .visualiser-container {
   width: 60vw;
   margin-left: auto;
@@ -13,6 +15,7 @@
 
 .array-container {
   display: flex;
+  margin: 0 2em;
 }
 
 .array-bar {
@@ -20,7 +23,8 @@
   margin: 0.2%;
 }
 
-.app-container ul {
+.app-container {
+  border: 1px solid red;
   display: flex;
   position: fixed;
   list-style-type: none;

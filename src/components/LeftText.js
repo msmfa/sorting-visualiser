@@ -72,19 +72,28 @@ function DisplayTextLeft() {
         <div className="text-references-container">
           <ul>
             <li>
-              Algorithms in Java, Parts 1-4, 3rd edition by Robert Sedgewick.
-              Addison Wesley, 2003.
+              <a
+                href="https://www.cs.princeton.edu/~rs/talks/QuicksortIsOptimal.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quicksort is Optimal
+              </a>{" "}
+              by Robert Sedgewick and Jon Bentley, Knuthfest, Stanford
+              University, January, 2002.
             </li>
             <li>
-              Quicksort is Optimal by Robert Sedgewick and Jon Bentley,
-              Knuthfest, Stanford University, January, 2002.
-            </li>
-            <li>
-              Sorting Out Sorting, Ronald M. Baecker with the assistance of
-              David Sherman, 30 minute color sound film, Dynamic Graphics
-              Project, University of Toronto, 1981. Excerpted and reprinted in
-              SIGGRAPH Video Review 7, 1983. Distributed by Morgan Kaufmann,
-              Publishers. Excerpt.
+              <a
+                href="https://www.youtube.com/watch?v=SJwEwA5gOkM"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Sorting Out Sorting,
+              </a>{" "}
+              Ronald M. Baecker with the assistance of David Sherman, 30 minute
+              color sound film, Dynamic Graphics Project, University of Toronto,
+              1981. Excerpted and reprinted in SIGGRAPH Video Review 7, 1983.
+              Distributed by Morgan Kaufmann, Publishers. Excerpt.
             </li>
           </ul>
         </div>
