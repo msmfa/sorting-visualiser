@@ -37,3 +37,7 @@ a {
 .text-performance li {
   margin: 0.2em 0;
 }
+
+#new-array-button {
+  margin-right: 9em;
+}

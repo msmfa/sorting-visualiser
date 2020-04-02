@@ -24,11 +24,11 @@
 }
 
 .app-container {
-  border: 1px solid rgb(226, 218, 218);
   display: flex;
   position: fixed;
   list-style-type: none;
   margin: 2em 2em;
+  width: 60vw;
 }
 
 .app-button {
@@ -39,4 +39,13 @@
   height: 4em;
   border-radius: 3px;
   margin: 0 2em 0 0;
+}
+
+.app-button:hover {
+  color: rgb(86, 121, 185);
+  cursor: pointer;
+}
+
+#new-array-button {
+  margin-right: 9em;
 }
