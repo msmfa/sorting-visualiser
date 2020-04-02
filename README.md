@@ -1,14 +1,27 @@
-## Data visualiser for sorting methods
+## Sorting algorithm visualiser
 
-### Merge Sort, Quick Sort, Heap Sort
+## Deployment
 
-1. Add a number of array input
-2. Add descriptions of each sort - dif states on click
-3. Add iterations per sorting algo?
-4. Update UI
-5.
+\*...link to site/what to download/what to install
 
-## Bubble Sort
-Compares pairs of numbers. Moved along one index and compares another paid using last index from previous comparison. Least efficient form of a sort because as the array grows the amount of swaps grows exponentially.
+## App in Action
 
-- (N2)
+_...screenshot_
+
+## Build Tools & Languages
+
+- Javascript
+- React
+- Visual Studio Code
+- Git
+- Github
+
+## What did I learn?
+
+- How to use hooks instead of classes in React
+
+## Authors
+
+Michael Sydney Moore
+
+## License
