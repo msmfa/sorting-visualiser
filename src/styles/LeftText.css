@@ -13,3 +13,15 @@
 .text-quick-link {
   color: rgb(14, 99, 168);
 }
+
+.text-para-container {
+  border: 1px solid grey;
+  height: 60vh;
+}
+.text-algo-description {
+  margin: 1em 0;
+}
+
+.text-link {
+  color: rgb(21, 95, 207);
+}
