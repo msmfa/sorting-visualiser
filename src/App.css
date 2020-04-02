@@ -24,16 +24,18 @@
 }
 
 .app-container {
-  border: 1px solid red;
+  border: 1px solid rgb(226, 218, 218);
   display: flex;
   position: fixed;
   list-style-type: none;
-  margin: 2em 0;
+  margin: 2em 2em;
 }
 
 .app-button {
-  border: 1px solid rgb(151, 151, 151);
+  border: none;
+  color: rgb(9, 9, 61);
   width: 10em;
+  font-weight: 600;
   height: 4em;
   border-radius: 3px;
   margin: 0 2em 0 0;

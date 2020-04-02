@@ -61,7 +61,7 @@ function DisplayTextLeft() {
           <div className="text-algo-description">
             {text.map(item => item.text)}
             {text.map(item => (
-              <ul>
+              <ul className="text-performance">
                 <li>{item.runtimeBest}</li>
                 <li>{item.runtimeAv}</li>
                 <li>{item.runtimeWorst}</li>

@@ -2,10 +2,14 @@
   text-decoration: none;
   list-style-type: none;
 }
+a {
+  color: #3863a0;
+}
 
 .text-container {
   border: 1px solid rgb(207, 207, 207);
   margin: 1em 1em 0 0;
+  padding: 0.4em;
 }
 
 .text-quick-link {
@@ -24,5 +28,12 @@
 }
 
 .text-references-container ul li {
-  margin: 1em 0.3em;
+  margin: 1em 0;
+}
+
+.text-performance {
+  margin: 1em 0;
+}
+.text-performance li {
+  margin: 0.2em 0;
 }
