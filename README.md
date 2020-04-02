@@ -1,8 +1,12 @@
 ## Sorting algorithm visualiser
 
+This project was built to help visulise how different sorting
+algorithms actually work. The sorting algorithms chosen are quick
+sort, merge sort and insertion sort.
+
 ## Deployment
 
-\*...link to site/what to download/what to install
+\*...website
 
 ## App in Action
 
