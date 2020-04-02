@@ -1,3 +1,7 @@
+* {
+  text-decoration: none;
+  list-style-type: none;
+}
 .container {
   border: 1px solid red;
   display: flex;
