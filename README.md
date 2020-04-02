@@ -6,7 +6,7 @@
 
 ## App in Action
 
-_...screenshot_
+![](IMG/sorting-visualiser.png)
 
 ## Build Tools & Languages
 

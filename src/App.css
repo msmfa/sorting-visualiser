@@ -32,7 +32,7 @@
 }
 
 .app-button {
-  border: none;
+  border: solid 1px rgb(196, 196, 196);
   color: rgb(9, 9, 61);
   width: 10em;
   font-weight: 600;
