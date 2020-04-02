@@ -36,8 +36,16 @@ a {
 }
 .text-performance li {
   margin: 0.2em 0;
+  padding: 0.3em;
 }
 
-#new-array-button {
-  margin-right: 9em;
+@media only screen and (max-width: 780px) {
+  .text-para-container {
+    height: 59vh;
+  }
+  .text-performance li {
+    position: relative;
+    margin: none;
+    padding: 0.3em;
+  }
 }
