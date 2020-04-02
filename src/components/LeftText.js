@@ -29,7 +29,7 @@ function DisplayTextLeft() {
     setText([
       {
         text:
-          "Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.",
+          "Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort or merge sort.",
         runtimeBest: "Best: n ",
         runtimeAv: "Average: n squared",
         runtimeWorst: "Worst: n squared"
