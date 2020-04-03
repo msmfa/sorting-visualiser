@@ -48,15 +48,15 @@ function DisplayTextLeft() {
           </span>{" "}
           <span className="text-link" onClick={quick}>
             {" "}
-            quick sort,
+            Quick sort,
           </span>
           <span className="text-link" onClick={merge}>
             {" "}
-            merge sort
+            Merge sort
           </span>
           <span className="text-link" onClick={insertion}>
             {" "}
-            or insertion sort
+            or Insertion sort.
           </span>
           <div className="text-algo-description">
             {text.map(item => item.text)}

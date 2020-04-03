@@ -26,6 +26,10 @@ a {
 .text-link {
   color: rgb(21, 95, 207);
 }
+.text-link:hover {
+  cursor: pointer;
+  color: rgb(34, 69, 121);
+}
 
 .text-references-container ul li {
   margin: 1em 0;
