@@ -33,10 +33,12 @@
 
 .app-button {
   border: solid 1px rgb(196, 196, 196);
+  background-color: rgb(230, 230, 230);
   color: rgb(9, 9, 61);
-  width: 10em;
-  font-weight: 600;
-  height: 4em;
+  width: 100%;
+  padding: 0.6em 1em;
+  font-weight: 400;
+  height: 100%;
   border-radius: 3px;
   margin: 0 2em 0 0;
 }

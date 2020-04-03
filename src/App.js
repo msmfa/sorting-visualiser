@@ -144,7 +144,7 @@ function DisplayArray() {
           id="new-array-button"
           onClick={displayArray}
         >
-          Create new array
+          New array
         </button>
 
         <button className="app-button" onClick={insertionSort}>

@@ -41,6 +41,6 @@ a {
 
 @media only screen and (max-width: 780px) {
   .text-para-container {
-    height: 40vh;
+    height: 50%;
   }
 }
