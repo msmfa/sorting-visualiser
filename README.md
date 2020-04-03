@@ -6,7 +6,7 @@ sort, Merge sort and Insertion sort.
 
 ## Deployment
 
-\*...website
+https://sorting-algo-visualiser.netlify.com/
 
 ## App in Action
 
@@ -19,6 +19,7 @@ sort, Merge sort and Insertion sort.
 - Visual Studio Code
 - Git
 - Github
+- Netlify
 
 ## What did I learn?
 
