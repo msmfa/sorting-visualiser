@@ -1,8 +1,8 @@
-## Sorting algorithm visualiser
+## Sorting Algorithm Visualiser
 
-This project was built to help visulise how different sorting
-algorithms actually work. The sorting algorithms chosen are quick
-sort, merge sort and insertion sort.
+This project was built to help visualise how different sorting
+algorithms work. The sorting algorithms chosen are Quick
+sort, Merge sort and Insertion sort.
 
 ## Deployment
 
@@ -22,8 +22,9 @@ sort, merge sort and insertion sort.
 
 ## What did I learn?
 
-- Using Hooks instead of classes in React
+- Using Hooks in React
 - Functional Programming
+- Recursive functions
 
 ## Authors
 
