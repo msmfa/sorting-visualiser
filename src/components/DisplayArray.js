@@ -110,6 +110,7 @@ export function DisplayArray() {
         insertionSort={insertionSort}
         mergeSort={mergeSort}
         quickSort={quickSort}
+        displayArray={displayArray}
       />
       <DisplayArrayBars containerRef={containerRef} arr={arr} />
     </div>
