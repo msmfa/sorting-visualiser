@@ -6,7 +6,7 @@ sort, Merge sort and Insertion sort.
 
 ## Deployment
 
-https://sorting-algo-visualiser.netlify.com/
+https://sort-vis.netlify.com/
 
 ## App in Action
 
