@@ -40,6 +40,7 @@ function DisplayTextLeft() {
     <>
       <div className="text-container">
         <div className="text-para-container">
+          <div className="text-title">Sort Vis</div>
           This app was built to help visualise the different sorting algorythms
           and how they work.
           <span> Click on the buttons above to sort the array using</span>{" "}
@@ -50,10 +51,11 @@ function DisplayTextLeft() {
           <span className="text-link" onClick={merge}>
             {" "}
             Merge sort
-          </span>
+          </span>{" "}
+          or
           <span className="text-link" onClick={insertion}>
             {" "}
-            or Insertion sort.
+            Insertion sort.
           </span>
           <div className="text-algo-description">
             {text.map((item) => item.text)}
@@ -73,6 +75,7 @@ function DisplayTextLeft() {
                 href="https://www.cs.princeton.edu/~rs/talks/QuicksortIsOptimal.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-link"
               >
                 Quicksort is Optimal
               </a>{" "}
@@ -84,6 +87,7 @@ function DisplayTextLeft() {
                 href="https://www.youtube.com/watch?v=SJwEwA5gOkM"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-link"
               >
                 Sorting Out Sorting,
               </a>{" "}

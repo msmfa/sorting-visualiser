@@ -3,7 +3,6 @@ import React from "react";
 export function SortButtons(props) {
   return (
     <div className="app-container">
-      <div className="nav-title">Sort Vis</div>
       <div className="button-container">
         <button className="app-button" onClick={props.insertionSort}>
           Insertion sort

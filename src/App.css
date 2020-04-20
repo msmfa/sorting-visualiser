@@ -26,6 +26,13 @@
   background-color: white;
 }
 
+.text-title {
+  color: red;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
 .array-container {
   display: flex;
   margin: 0 2em;
@@ -54,11 +61,14 @@
 .button-container {
   border: none;
   width: 50vw;
+  margin-left: auto;
 }
 .app-button {
   color: #a8abb5;
   background-color: rgb(48, 51, 62);
   border: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
 }
 
 #new-array-button {
@@ -69,13 +79,13 @@
   color: white;
   font-size: 0.8em;
 }
-.nav-title {
-  padding-left: 2em;
-  font-size: 1.2em;
-  display: flex;
-  align-items: center;
-}
+
 .app-button:hover {
   color: rgb(86, 121, 185);
+  cursor: pointer;
+}
+.text-link {
+  color: rgb(70, 190, 94);
+  font-weight: 600;
   cursor: pointer;
 }
