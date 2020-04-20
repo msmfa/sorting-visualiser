@@ -1,6 +1,7 @@
 import React from "react";
 import DisplayTextLeft from "./components/LeftText";
 import "./App.css";
+import "./css/Buttons.css";
 import "./styles/LeftText.css";
 import { DisplayArray } from "./components/DisplayArray";
 

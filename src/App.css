@@ -2,15 +2,28 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  list-style-type: none;
 }
+
 .container {
   display: flex;
+  border: 1px solid green;
+  background-color: rgb(227, 227, 238);
+  height: 100vh;
+  font-weight: 300;
+  color: grey;
+  line-height: 1.6em;
 }
 .visualiser-container {
   width: 60vw;
-  margin-left: auto;
-  margin-right: 3em;
-  margin-top: 2em;
+}
+.text-container {
+  font-family: "Merriweather", serif;
+  margin-top: 3em;
+  padding: 0.7em;
+  padding-top: 3em;
+  background-color: white;
 }
 
 .array-container {
@@ -19,72 +32,50 @@
 }
 
 .array-bar {
-  background-color: rgb(123, 157, 221);
+  background-color: rgb(237, 62, 67);
   margin: 0.2%;
 }
 
-.app-container {
+/*--------------- BUTTONS ----------------*/
+.app-container,
+.button-container {
+  align-items: center;
+  color: #a8abb5;
   display: flex;
-  position: fixed;
-  list-style-type: none;
-  margin: 2em 2em;
-  width: 60vw;
+  justify-content: space-between;
+  background-color: rgb(48, 51, 62);
 }
 
+.app-container {
+  height: 3em;
+  width: 100vw;
+  padding-right: 2em;
+}
+.button-container {
+  border: none;
+  width: 50vw;
+}
 .app-button {
-  border: solid 1px rgb(196, 196, 196);
-  background-color: rgb(230, 230, 230);
-  color: rgb(9, 9, 61);
-  width: 100%;
-  padding: 0.6em 1em;
-  font-weight: 400;
-  height: 100%;
-  border-radius: 3px;
-  margin: 0 2em 0 0;
-}
-
-.app-button:hover {
-  color: rgb(86, 121, 185);
-  cursor: pointer;
+  color: #a8abb5;
+  background-color: rgb(48, 51, 62);
+  border: none;
 }
 
 #new-array-button {
-  margin-right: 9em;
+  background-color: rgb(70, 190, 94);
+  height: 2.5em;
+  width: 7em;
+  border-radius: 15px;
+  color: white;
+  font-size: 0.8em;
 }
-
-@media only screen and (max-width: 780px) {
-  .container {
-    display: block;
-  }
-  .visualiser-container {
-    width: 90vw;
-    margin: none;
-  }
-
-  .array-container {
-    margin-left: 1em;
-    width: 90vw;
-  }
-
-  .app-container {
-    position: relative;
-    margin: 0;
-    justify-content: space-evenly;
-    width: 90vw;
-    margin-left: 1em;
-  }
-
-  .app-button {
-    border: solid 1px rgb(223, 223, 223);
-    width: 8em;
-    font-weight: 400;
-    height: 3em;
-    border-radius: 3px;
-    margin: 1em 0;
-    padding: 0 1em;
-  }
-
-  #new-array-button {
-    margin-right: 0;
-  }
+.nav-title {
+  padding-left: 2em;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+}
+.app-button:hover {
+  color: rgb(86, 121, 185);
+  cursor: pointer;
 }

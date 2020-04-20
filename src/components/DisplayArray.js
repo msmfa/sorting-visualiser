@@ -106,12 +106,12 @@ export function DisplayArray() {
   }
   return (
     <div className="visualiser-container">
-      <DisplayArrayBars containerRef={containerRef} arr={arr} />
       <SortButtons
         insertionSort={insertionSort}
         mergeSort={mergeSort}
         quickSort={quickSort}
       />
+      <DisplayArrayBars containerRef={containerRef} arr={arr} />
     </div>
   );
 }
