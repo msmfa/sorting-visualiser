@@ -9,8 +9,8 @@ export const arrayLength = 100;
 export const minNumb = 5;
 export const maxNum = 80;
 export const timeDelay = 5;
-export const sortingColour = "red";
-export const sortingCompleteColour = "blue";
+export const sortingColour = "green";
+export const sortingCompleteColour = "green";
 
 function App() {
   return (

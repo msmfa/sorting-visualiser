@@ -8,7 +8,6 @@
 
 .container {
   display: flex;
-  border: 1px solid green;
   background-color: rgb(227, 227, 238);
   height: 100vh;
   font-weight: 300;
@@ -88,4 +87,11 @@
   color: rgb(70, 190, 94);
   font-weight: 600;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  .text-title {
+    font-size: 1em;
+    margin-bottom: 1rem;
+  }
 }
